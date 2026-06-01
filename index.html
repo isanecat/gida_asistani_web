@@ -3,121 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gıda Asistanı - Senin Seçimlerin, Senin Gıdan.</title>
+    <title>Gıda Asistanı - App Store Vitrini</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap');
-        body { font-family: 'Lexend', sans-serif; background-color: #080B12; }
-        .bento-container { background-color: #000; border: 8px solid #000; border-radius: 40px; }
-        .bento-item { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); border: 1px solid rgba(255,255,255,0.05); }
-        .bento-item:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.15); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .mockup-img { object-fit: cover; width: 100%; height: 100%; border-radius: 16px; opacity: 0.9; }
+        body { font-family: 'Lexend', sans-serif; background-color: #080B12; color: #cbd5e1; }
+        .bento-grid { display: grid; grid-template-columns: repeat(12, 1 columns); gap: 1.5rem; }
+        .app-card { background: #111827; border: 1px solid rgba(255,255,255,0.05); border-radius: 32px; overflow: hidden; transition: all 0.4s ease; }
+        .app-card:hover { border-color: rgba(16, 185, 129, 0.3); transform: translateY(-5px); }
+        .phone-mockup { border: 6px solid #1f2937; border-radius: 36px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); width: 100%; height: auto; }
+        .gradient-text { background: linear-gradient(135deg, #34d399, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="text-slate-300 antialiased min-h-screen">
+<body class="p-6 md:p-12">
 
-    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold">G</div>
-            <span class="text-xl font-bold text-white tracking-tight">Gıda <span class="text-emerald-400">Asistanı</span></span>
-        </div>
-        <a href="#" class="bg-emerald-500 hover:bg-emerald-400 text-black px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-emerald-500/20">Hemen İndir</a>
-    </nav>
-
-    <header class="max-w-3xl mx-auto text-center px-6 py-12">
-        <h1 class="text-5xl md:text-6xl font-black text-white mb-6 leading-[1.1]">Senin Seçimlerin,<br><span class="text-emerald-400">Senin Gıdan.</span></h1>
-        <p class="text-slate-400 text-lg">Yapay zeka asistanınla gıdaların arka yüzündeki gerçek hikayeyi keşfet.</p>
+    <!-- Hero Bölümü -->
+    <header class="max-w-5xl mx-auto text-center mb-20">
+        <h1 class="text-4xl md:text-6xl font-black text-white mb-6">Analiz Et, <span class="gradient-text">Güvenle Tüket.</span></h1>
+        <p class="text-slate-400 text-lg">Gıdaların dijital röntgenini çekiyoruz. İşte Gıda Asistanı'nın yetenekleri.</p>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 md:px-6 mb-24">
-        <div class="bento-container grid grid-cols-1 md:grid-cols-4 gap-4 p-2">
+    <main class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <!-- Sağlıklı Gıda ( Büyük Ekran Görüntüsü ) -->
-            <div class="bento-item md:row-span-2 bg-[#10141E] rounded-[32px] p-8 flex flex-col justify-between overflow-hidden relative">
-                <div class="mb-6">
-                    <span class="text-emerald-400 text-[10px] font-black uppercase tracking-[0.2em]">Öne Çıkan</span>
-                    <h3 class="text-2xl font-bold text-white mt-2">Sağlıklı Gıda Analizi</h3>
+            <!-- Analiz 1: İçerik Detayı -->
+            <div class="app-card p-8 flex flex-col items-center">
+                <div class="mb-6 text-center">
+                    <h3 class="text-xl font-bold text-white">Derinlemesine İçerik</h3>
+                    <p class="text-sm text-slate-500 mt-2">Karmaşık etiketleri anlaşılır verilere dönüştürün.</p>
                 </div>
-                <div class="relative h-64 md:h-full mt-4 group">
-                    <!-- Örnek Ekran Görüntüsü Alanı -->
-                    <img src="ana_ekran.jpeg" alt="Sağlık Analiz Ekranı" class="mockup-img group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#10141E] via-transparent to-transparent"></div>
-                </div>
-                <p class="text-slate-500 text-xs mt-4">Kişisel hedeflerine göre gıdaları puanla.</p>
+                <img src="analiz1.jpeg" alt="İçerik Analizi" class="phone-mockup">
             </div>
 
-            <!-- Analiz Grafiği Kartı -->
-            <div class="bento-item md:col-span-2 bg-[#1A1F2B] rounded-[32px] p-6 relative overflow-hidden">
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <h4 class="text-white font-bold">Analiz Trafiği</h4>
-                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Canlı İstatistikler</p>
-                    </div>
-                    <span class="text-2xl">📊</span>
+            <!-- Analiz 2: Katkı Maddeleri -->
+            <div class="app-card p-8 flex flex-col items-center">
+                <div class="mb-6 text-center">
+                    <h3 class="text-xl font-bold text-white">E-Kod Dedektörü</h3>
+                    <p class="text-sm text-slate-500 mt-2">Zararlı katkı maddelerini anında tespit edin.</p>
                 </div>
-                <div class="h-32 flex items-end gap-2 px-2">
-                    <div class="w-full bg-emerald-500/20 h-[40%] rounded-t-md border-t border-emerald-500/30"></div>
-                    <div class="w-full bg-emerald-500/40 h-[70%] rounded-t-md border-t border-emerald-500/50"></div>
-                    <div class="w-full bg-emerald-500 h-[100%] rounded-t-md shadow-[0_0_20px_rgba(16,185,129,0.3)]"></div>
-                    <div class="w-full bg-emerald-500/60 h-[60%] rounded-t-md border-t border-emerald-500/50"></div>
-                    <div class="w-full bg-emerald-500/30 h-[85%] rounded-t-md border-t border-emerald-500/40"></div>
-                </div>
-                <p class="text-[11px] text-slate-400 mt-4 text-center">Yapay zeka her gün binlerce içerik iddialarını denetliyor.</p>
+                <img src="analiz2.jpeg" alt="Katkı Maddesi Analizi" class="phone-mockup">
             </div>
 
-            <!-- Alerjen Kontrol Paneli -->
-            <div class="bento-item md:row-span-2 bg-gradient-to-br from-orange-600 to-amber-700 rounded-[32px] p-6 flex flex-col justify-between overflow-hidden">
-                <div>
-                    <h3 class="text-xl font-black text-white">Alerji Sensörü</h3>
-                    <p class="text-orange-100/70 text-[11px] mt-2 leading-relaxed">Senin hassasiyetlerini bilir, sadece riskli olanlarda ses çıkarır.</p>
+            <!-- Analiz 3: Besin Değerleri -->
+            <div class="app-card p-8 flex flex-col items-center">
+                <div class="mb-6 text-center">
+                    <h3 class="text-xl font-bold text-white">Makro Dengesi</h3>
+                    <p class="text-sm text-slate-500 mt-2">Gerçek besin değerlerini grafiklerle görün.</p>
                 </div>
-                <div class="my-6">
-                    <img src="alerjen.jpeg" alt="Alerjen Ekranı" class="rounded-2xl border border-white/20 shadow-2xl">
-                </div>
-                <div class="bg-black/20 rounded-xl p-3">
-                    <p class="text-white font-bold text-xs">Risk Tespiti: %100</p>
-                </div>
+                <img src="analiz3.jpeg" alt="Besin Değeri Analizi" class="phone-mockup">
             </div>
 
-            <!-- Ambalaj Tutarlılığı (Geniş Panel) -->
-            <div class="bento-item md:col-span-2 bg-[#0F172A] rounded-[32px] p-8 flex items-center gap-6 overflow-hidden relative">
-                <div class="flex-1 z-10">
-                    <h3 class="text-sky-400 font-bold mb-2">Ambalaj Tutarlılığı</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">Ön yüzdeki sloganları, arka yüzdeki gerçeklerle kıyasla. Kandırılmaya son ver.</p>
+            <!-- Orta Bölüm - Büyük Kart: GÜVENLİ LİSTEM -->
+            <div class="app-card md:col-span-2 p-10 flex flex-col md:flex-row items-center gap-10 bg-gradient-to-br from-[#111827] to-[#064e3b]/20">
+                <div class="flex-1">
+                    <span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full uppercase">Yeni Özellik</span>
+                    <h3 class="text-3xl font-black text-white mt-4">Güvenli Listem</h3>
+                    <p class="text-slate-400 mt-4 leading-relaxed">
+                        Taradığın ve onayladığın gıdaları kişisel kütüphanene ekle. 
+                        Market alışverişinde ne alacağını düşünme, kendi sağlıklı kataloğunu oluştur.
+                    </p>
+                    <ul class="mt-6 space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-2">✅ Hızlı Erişim</li>
+                        <li class="flex items-center gap-2">✅ Çevrimdışı Görüntüleme</li>
+                        <li class="flex items-center gap-2">✅ Arkadaşlarınla Paylaş</li>
+                    </ul>
                 </div>
-                <div class="w-40 h-32 flex-shrink-0 bg-slate-800 rounded-2xl border border-slate-700 rotate-3 overflow-hidden shadow-2xl">
-                    <img src="https://via.placeholder.com/200x200/1E293B/FFFFFF?text=Scan+AI" class="opacity-50">
+                <div class="w-full md:w-64 shrink-0">
+                    <img src="guvenli_liste.jpeg" alt="Güvenli Listem Ekranı" class="phone-mockup">
                 </div>
             </div>
 
-            <!-- Harita / Helal Lokasyon (Alt Orta) -->
-            <div class="bento-item bg-[#10141E] rounded-[32px] overflow-hidden relative">
-                <img src="https://via.placeholder.com/400x300/111827/4B5563?text=Kriter+Secimi+Ekrani" class="mockup-img">
-                <div class="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-                    <h4 class="text-white font-bold text-sm">Yaşam Tarzı Filtreleri</h4>
-                    <p class="text-slate-400 text-[10px]">Vegan, Helal, Vejetaryen</p>
+            <!-- Analiz 4: Alerjen Uyarısı -->
+            <div class="app-card p-8 flex flex-col items-center border-orange-500/20">
+                <div class="mb-6 text-center">
+                    <h3 class="text-xl font-bold text-white text-orange-400">Alerji Kalkanı</h3>
+                    <p class="text-sm text-slate-500 mt-2">Sizin için riskli olan içerikleri parlatır.</p>
                 </div>
+                <img src="analiz4.jpeg" alt="Alerjen Analizi" class="phone-mockup">
             </div>
 
-            <!-- Güvenli Listem (Paylaşım) -->
-            <div class="bento-item bg-emerald-950/30 border-emerald-900/30 rounded-[32px] p-6 flex flex-col justify-between">
-                <div class="flex items-center gap-2">
-                    <div class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></div>
-                    <span class="text-emerald-400 text-[10px] font-bold uppercase tracking-widest">Paylaşılabilir</span>
+            <!-- Analiz 5: Puanlama Sistemi -->
+            <div class="app-card p-8 flex flex-col items-center">
+                <div class="mb-6 text-center">
+                    <h3 class="text-xl font-bold text-white">Gıda Puanı</h3>
+                    <p class="text-sm text-slate-500 mt-2">100 üzerinden net sağlık skoru.</p>
                 </div>
-                <h4 class="text-white font-bold text-sm">Güvenli Listem</h4>
-                <p class="text-slate-500 text-[10px]">Onaylı gıdalarını arkadaşlarınla paylaş.</p>
+                <img src="analiz5.jpeg" alt="Puanlama Analizi" class="phone-mockup">
             </div>
 
         </div>
     </main>
 
-    <footer class="max-w-7xl mx-auto px-6 pb-12">
-        <div class="bg-white/5 border border-white/10 rounded-[32px] p-8 text-center md:text-left">
-            <p class="text-[10px] text-slate-500 leading-relaxed max-w-4xl">
-                <strong class="text-slate-400">YASAL UYARI:</strong> Gıda Asistanı yapay zeka tabanlı bir analiz aracıdır. Sonuçlar ambalaj beyanına dayanır. Tıbbi tavsiye niteliği taşımaz. Şiddetli alerji durumlarında mutlaka bir sağlık profesyoneline danışınız.
-            </p>
-        </div>
+    <footer class="mt-24 text-center text-slate-600 text-xs border-t border-white/5 pt-8">
+        &copy; 2026 Ofizu Games. Tüm hakları saklıdır.
     </footer>
 
 </body>
