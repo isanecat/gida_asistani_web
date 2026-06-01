@@ -8,105 +8,138 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap');
         body { font-family: 'Lexend', sans-serif; background-color: #080B12; color: #cbd5e1; }
-        .app-card { background: #111827; border: 1px solid rgba(255,255,255,0.05); border-radius: 32px; overflow: hidden; transition: all 0.4s ease; }
-        .app-card:hover { border-color: rgba(16, 185, 129, 0.3); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
-        .phone-mockup { border: 6px solid #1f2937; border-radius: 32px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); max-height: 400px; object-fit: cover; }
-        .hero-mockup { border: 8px solid #1f2937; border-radius: 40px; box-shadow: 0 30px 60px -12px rgba(16, 185, 129, 0.2); max-height: 500px; }
-        .gradient-text { background: linear-gradient(135deg, #34d399, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        /* Tüm Kartlar İçin Ortak Stil */
+        .app-card { 
+            background: #111827; 
+            border: 1px solid rgba(255,255,255,0.05); 
+            border-radius: 40px; 
+            overflow: hidden; 
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+        }
+        .app-card:hover { 
+            border-color: rgba(16, 185, 129, 0.3); 
+            transform: translateY(-8px); 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5); 
+        }
+
+        /* Tüm Görselleri Ana Ekran Boyutuna Eşitleyen Sınıf */
+        .universal-mockup { 
+            border: 8px solid #1f2937; 
+            border-radius: 44px; 
+            box-shadow: 0 30px 60px -12px rgba(16, 185, 129, 0.15); 
+            width: 100%;
+            max-width: 320px; /* Görsellerin devleşip bozulmaması için ideal genişlik */
+            height: auto;
+            max-height: 550px; /* Ana ekran büyüklüğünde sabit yükseklik */
+            object-fit: cover;
+        }
+
+        .gradient-text { 
+            background: linear-gradient(135deg, #34d399, #14b8a6); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
     </style>
 </head>
 <body class="p-6 md:p-12 antialiased">
 
     <!-- Hero Bölümü -->
-    <header class="max-w-5xl mx-auto text-center mb-16">
-        <!-- Ana Menü Resmi (Başlığın Üzerinde) -->
+    <header class="max-w-5xl mx-auto text-center mb-24">
+        <!-- Ana Menü Resmi -->
         <div class="flex justify-center mb-12">
-            <img src="ana_ekran.jpeg" alt="Gıda Asistanı Ana Ekran" class="hero-mockup transform hover:scale-105 transition-transform duration-700">
+            <img src="ana_ekran.jpeg" alt="Gıda Asistanı Ana Ekran" class="universal-mockup scale-110 hover:scale-105 transition-transform duration-700 border-emerald-500/20">
         </div>
         
-        <h1 class="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight">Ne Yediğini <span class="gradient-text">Bil.</span></h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto">Gıda Asistanı, altı farklı özel analiz aracıyla market raflarındaki gizemi çözüyor.</p>
+        <h1 class="text-4xl md:text-7xl font-black text-white mb-6 tracking-tight">Ne Yediğini <span class="gradient-text">Bil.</span></h1>
+        <p class="text-slate-400 text-xl max-w-2xl mx-auto font-light">Market raflarındaki gizemi altı farklı uzman analiz aracıyla çözüyoruz.</p>
     </header>
 
-    <main class="max-w-5xl mx-auto flex flex-col gap-8 mb-24">
+    <main class="max-w-6xl mx-auto flex flex-col gap-12 mb-32">
 
         <!-- 1. Sağlıklı Gıda Analizi -->
-        <div class="app-card p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+        <div class="app-card p-10 md:p-16 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1">
-                <span class="text-emerald-400 text-xs font-bold px-3 py-1 bg-emerald-500/10 rounded-full uppercase tracking-wider">01 / Temel Analiz</span>
-                <h3 class="text-3xl font-bold text-white mt-4 mb-3">Sağlıklı Gıda Analizi</h3>
-                <p class="text-slate-400 leading-relaxed text-lg">Yetişkin ve çocuklara özel sağlıklı gıda filtrelemeyi sağlayan güçlü analiz aracı. İçeriklerin genel sağlık skorunu anında görün.</p>
+                <span class="text-emerald-400 text-sm font-bold px-4 py-1.5 bg-emerald-500/10 rounded-full uppercase tracking-widest">01 / Temel Analiz</span>
+                <h3 class="text-4xl font-bold text-white mt-6 mb-4">Sağlıklı Gıda Analizi</h3>
+                <p class="text-slate-400 leading-relaxed text-xl font-light">Yetişkin ve çocuklara özel sağlıklı gıda filtrelemeyi sağlayan güçlü analiz aracı. İçeriklerin genel sağlık skorunu anında görün.</p>
             </div>
-            <div class="w-full md:w-64 shrink-0 flex justify-center">
-                <img src="saglikli_gida.jpeg" alt="Sağlıklı Gıda Analizi" class="phone-mockup">
+            <div class="w-full md:w-80 shrink-0 flex justify-center">
+                <img src="saglikli_gida.jpeg" alt="Sağlıklı Gıda Analizi" class="universal-mockup">
             </div>
         </div>
 
         <!-- 2. Alerjen Analizi -->
-        <div class="app-card p-8 md:p-12 flex flex-col md:flex-row-reverse items-center gap-10">
+        <div class="app-card p-10 md:p-16 flex flex-col md:flex-row-reverse items-center gap-16">
             <div class="flex-1 text-left md:text-right">
-                <span class="text-orange-400 text-xs font-bold px-3 py-1 bg-orange-500/10 rounded-full uppercase tracking-wider">02 / Hassasiyet</span>
-                <h3 class="text-3xl font-bold text-white mt-4 mb-3">Alerjen Analizi</h3>
-                <p class="text-slate-400 leading-relaxed text-lg">Alerjisi olanlara özel analiz aracı. Etiketlerde gizlenmiş veya çapraz bulaşma riski taşıyan potansiyel alerjenleri tespit edin.</p>
+                <span class="text-orange-400 text-sm font-bold px-4 py-1.5 bg-orange-500/10 rounded-full uppercase tracking-widest">02 / Hassasiyet</span>
+                <h3 class="text-4xl font-bold text-white mt-6 mb-4">Alerjen Analizi</h3>
+                <p class="text-slate-400 leading-relaxed text-xl font-light">Alerjisi olanlara özel analiz aracı. Etiketlerde gizlenmiş veya çapraz bulaşma riski taşıyan potansiyel alerjenleri anında tespit edin.</p>
             </div>
-            <div class="w-full md:w-64 shrink-0 flex justify-center">
-                <img src="alerjen.jpeg" alt="Alerjen Analizi" class="phone-mockup">
+            <div class="w-full md:w-80 shrink-0 flex justify-center">
+                <img src="alerjen.jpeg" alt="Alerjen Analizi" class="universal-mockup">
             </div>
         </div>
 
         <!-- 3. Vegan / Vejetaryen Analizi -->
-        <div class="app-card p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+        <div class="app-card p-10 md:p-16 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1">
-                <span class="text-green-400 text-xs font-bold px-3 py-1 bg-green-500/10 rounded-full uppercase tracking-wider">03 / Yaşam Tarzı</span>
-                <h3 class="text-3xl font-bold text-white mt-4 mb-3">Vegan / Vejetaryen Analizi</h3>
-                <p class="text-slate-400 leading-relaxed text-lg">Vegan ve vejetaryen hassasiyetleri olanlara özel analiz aracı. Hayvansal kaynaklı içerikleri kolayca filtreleyin.</p>
+                <span class="text-green-400 text-sm font-bold px-4 py-1.5 bg-green-500/10 rounded-full uppercase tracking-widest">03 / Yaşam Tarzı</span>
+                <h3 class="text-4xl font-bold text-white mt-6 mb-4">Vegan / Vejetaryen Analizi</h3>
+                <p class="text-slate-400 leading-relaxed text-xl font-light">Vegan ve vejetaryen hassasiyetleri olanlara özel analiz aracı. Hayvansal kaynaklı tüm içerikleri saniyeler içinde filtreleyin.</p>
             </div>
-            <div class="w-full md:w-64 shrink-0 flex justify-center">
-                <img src="vejetaryen.jpeg" alt="Vejetaryen Analizi" class="phone-mockup">
+            <div class="w-full md:w-80 shrink-0 flex justify-center">
+                <img src="vejetaryen.jpeg" alt="Vejetaryen Analizi" class="universal-mockup">
             </div>
         </div>
 
         <!-- 4. Ambalaj Tutarlılık Analizi -->
-        <div class="app-card p-8 md:p-12 flex flex-col md:flex-row-reverse items-center gap-10">
+        <div class="app-card p-10 md:p-16 flex flex-col md:flex-row-reverse items-center gap-16">
             <div class="flex-1 text-left md:text-right">
-                <span class="text-sky-400 text-xs font-bold px-3 py-1 bg-sky-500/10 rounded-full uppercase tracking-wider">04 / Doğrulama</span>
-                <h3 class="text-3xl font-bold text-white mt-4 mb-3">Ambalaj Tutarlılık Analizi</h3>
-                <p class="text-slate-400 leading-relaxed text-lg">Ambalajların üzerindeki sloganların kontrolünü sağlayın. Ön yüzdeki vaatler ile arka yüzdeki gerçekleri karşılaştırın.</p>
+                <span class="text-sky-400 text-sm font-bold px-4 py-1.5 bg-sky-500/10 rounded-full uppercase tracking-widest">04 / Doğrulama</span>
+                <h3 class="text-4xl font-bold text-white mt-6 mb-4">Ambalaj Tutarlılık Analizi</h3>
+                <p class="text-slate-400 leading-relaxed text-xl font-light">Ambalajların üzerindeki sloganların kontrolünü sağlayın. Ön yüzdeki vaatler ile arka yüzdeki gerçekleri kıyaslayın.</p>
             </div>
-            <div class="w-full md:w-64 shrink-0 flex justify-center">
-                <img src="ambalaj.jpeg" alt="Ambalaj Tutarlılık Analizi" class="phone-mockup">
+            <div class="w-full md:w-80 shrink-0 flex justify-center">
+                <img src="ambalaj.jpeg" alt="Ambalaj Tutarlılık Analizi" class="universal-mockup">
             </div>
         </div>
 
-        <!-- 5. Helal Analizi (Görsel Notu: helal.jpeg yüklenmelidir) -->
-        <div class="app-card p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+        <!-- 5. Helal Analizi -->
+        <div class="app-card p-10 md:p-16 flex flex-col md:flex-row items-center gap-16">
             <div class="flex-1">
-                <span class="text-amber-400 text-xs font-bold px-3 py-1 bg-amber-500/10 rounded-full uppercase tracking-wider">05 / İnanç & Tercih</span>
-                <h3 class="text-3xl font-bold text-white mt-4 mb-3">Helal Analizi</h3>
-                <p class="text-slate-400 leading-relaxed text-lg">Helal hassasiyetleri olanlar için analiz aracı. Şüpheli katkı maddelerini hızla tarayın.</p>
+                <span class="text-amber-400 text-sm font-bold px-4 py-1.5 bg-amber-500/10 rounded-full uppercase tracking-widest">05 / İnanç & Tercih</span>
+                <h3 class="text-4xl font-bold text-white mt-6 mb-4">Helal Analizi</h3>
+                <p class="text-slate-400 leading-relaxed text-xl font-light">Helal hassasiyetleri olanlar için analiz aracı. Şüpheli katkı maddelerini ve uygunsuz bileşenleri hızla tarayın.</p>
             </div>
-            <div class="w-full md:w-64 shrink-0 flex justify-center bg-slate-800/20 rounded-2xl h-64 border border-white/5 items-center">
-                 <span class="text-slate-600 text-xs italic">Helal ekran görüntüsü bekleniyor</span>
+            <div class="w-full md:w-80 shrink-0 flex justify-center">
+                <img src="helal.jpeg" alt="Helal Analizi" class="universal-mockup">
             </div>
         </div>
 
         <!-- 6. Güvenli Listem -->
-        <div class="app-card p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 bg-gradient-to-br from-[#111827] to-[#064e3b]/30 border-emerald-500/30">
+        <div class="app-card p-10 md:p-16 flex flex-col md:flex-row items-center gap-16 bg-gradient-to-br from-[#111827] to-[#064e3b]/40 border-emerald-500/30">
             <div class="flex-1">
-                <span class="text-emerald-400 text-xs font-bold px-3 py-1 bg-emerald-500/20 rounded-full uppercase tracking-wider">06 / Kişiselleştirme</span>
-                <h3 class="text-4xl font-black text-white mt-4 mb-4">Güvenli Listem</h3>
-                <p class="text-slate-300 leading-relaxed text-lg">
-                    Tüm analizleri ürün ve marka adına göre saklayıp güvenli bir alışveriş listesi oluşturmak için kullanılır.
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-emerald-400 text-sm font-bold px-4 py-1.5 bg-emerald-500/20 rounded-full uppercase tracking-widest animate-pulse">Merkezi Özellik</span>
+                </div>
+                <h3 class="text-5xl font-black text-white mb-6">Güvenli Listem</h3>
+                <p class="text-slate-300 leading-relaxed text-xl font-light">
+                    Tüm analizleri ürün ve marka adına göre saklayıp <strong>güvenli bir alışveriş listesi</strong> oluşturun. Tekrar tarama yapmaya gerek duymadan favori ürünlerinize ulaşın.
                 </p>
             </div>
-            <div class="w-full md:w-72 shrink-0 flex justify-center">
-                <img src="guvenli_listem.jpeg" alt="Güvenli Listem" class="phone-mockup transform md:rotate-2">
+            <div class="w-full md:w-80 shrink-0 flex justify-center transform md:rotate-3">
+                <img src="guvenli_listem.jpeg" alt="Güvenli Listem" class="universal-mockup shadow-emerald-500/40">
             </div>
         </div>
 
     </main>
 
-    <footer class="text-center text-slate-600 text-sm border-t border-white/5 pt-8 pb-12">
+    <footer class="text-center text-slate-600 text-sm border-t border-white/5 pt-12 pb-20">
+        <div class="mb-4">
+            <div class="w-8 h-8 rounded-lg bg-slate-800 mx-auto flex items-center justify-center text-slate-500 font-bold mb-4">O</div>
+            <p class="text-slate-400 font-bold text-lg">Ofizu</p>
+        </div>
         <p>&copy; 2026 Ofizu. Tüm hakları saklıdır.</p>
     </footer>
 
